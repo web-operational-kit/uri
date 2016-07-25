@@ -3,7 +3,7 @@
     "type": "library",
     "version": "1.0.0-dev",
     "description": "WOK URI handler",
-    "homepage": "https://github.com/wok/uri",
+    "homepage": "https://github.com/web-operational-kit/uri",
     "license": "BSD",
     "authors": [
         {

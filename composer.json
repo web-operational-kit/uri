@@ -16,8 +16,5 @@
             "WOK\\Uri\\" : "./src/"
         }
     },
-    "minimum-stability": "stable",
-    "require": {
-        "jolicode/jolitypo": "^1.0"
-    }
+    "minimum-stability": "stable"
 }

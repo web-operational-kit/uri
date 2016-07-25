@@ -1,0 +1,23 @@
+{
+    "name": "wok/uri",
+    "type": "library",
+    "version": "1.0",
+    "description": "WOK URI handler",
+    "homepage": "https://github.com/wok/uri",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Sébastien ALEXANDRE",
+            "email": "sebastien@graphidev.fr"
+        }
+    ],
+    "autoload" : {
+        "psr-4": {
+            "WOK\\Uri\\" : "./src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "jolicode/jolitypo": "^1.0"
+    }
+}

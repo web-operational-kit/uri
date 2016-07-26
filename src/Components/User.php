@@ -78,7 +78,7 @@
          * @param   string      $username       New username value
         **/
         public function setUsername($username) {
-            return $this->username;
+            $this->username = $username;
         }
 
         /**
@@ -88,7 +88,7 @@
         public function withUsername($username) {
 
             $uri = clone $this;
-            $this->setUsername($username);
+            $uri->setUsername($username);
 
             return $uri;
 
@@ -107,7 +107,7 @@
          * @param   string      $password       New password value
         **/
         public function setPassword($password) {
-            return $this->password;
+            $this->password = $password;
         }
 
         /**
@@ -117,7 +117,7 @@
         public function withPassword($password) {
 
             $uri = clone $this;
-            $this->setPassword($password);
+            $uri->setPassword($password);
 
             return $uri;
 

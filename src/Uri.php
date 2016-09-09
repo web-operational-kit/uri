@@ -153,7 +153,7 @@
          * @return  string      Return the host value
         **/
         public function getHost() {
-            return (string) $this->host;
+            return $this->host;
         }
 
         /**
@@ -214,16 +214,16 @@
          * @return  string      Return the port value
         **/
         public function getPath() {
-            return (string) $this->path;
+            return $this->path;
         }
 
 
         /**
          * Define the URI port
-         * @param   integer         New path value
+         * @param   string      $path     New path value
         **/
         public function setPath($path) {
-            $this->path = $path;
+            $this->path = ($path instanceof Path ? $path : new Path($path));
         }
 
         /**

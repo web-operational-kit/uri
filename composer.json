@@ -1,7 +1,7 @@
 {
     "name": "wok/uri",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "WOK URI handler",
     "homepage": "https://github.com/web-operational-kit/uri",
     "license": "BSD",

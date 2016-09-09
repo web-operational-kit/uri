@@ -17,6 +17,7 @@
         }
     },
     "require": {
-        "wok/helpers": "*@dev"
-    }
+        "wok/helpers": "^1.0.0"
+    },
+    "minimum-stability": "stable"
 }

@@ -8,6 +8,7 @@
     class PathTest extends TestCase {
 
         const PATH_COMPLETE             = '/path/to/my/resource.ext';
+        const PATH_ALTERNATIVE          = '/another/way/to/my/resource.ext';
         const RESOURCE_NAME             = 'resource.ext';
         const RESOURCE_EXTENSION        = '.ext';
         const RESOURCE_WITHOUT_EXT      = 'resource';
@@ -21,7 +22,16 @@
 
         public function testPath() {
 
+            $this->assertEquals(self::PATH_COMPLETE, (string) $this->path);
             $this->assertInstanceOf(Path::class, $this->path);
+
+            $setPath = clone $this->path;
+            $setPath->setPath(self::PATH_ALTERNATIVE);
+            $this->assertEquals(self::PATH_ALTERNATIVE, (string) $setPath);
+
+            $withPath = $this->path->withPath(self::PATH_ALTERNATIVE);
+            $this->assertInstanceOf(Path::class, $withPath);
+            $this->assertEquals(self::PATH_ALTERNATIVE, (string) $withPath);
 
         }
 

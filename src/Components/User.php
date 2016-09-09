@@ -87,10 +87,10 @@
         **/
         public function withUsername($username) {
 
-            $uri = clone $this;
-            $uri->setUsername($username);
+            $user = clone $this;
+            $user->setUsername($username);
 
-            return $uri;
+            return $user;
 
         }
 

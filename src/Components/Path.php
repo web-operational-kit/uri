@@ -18,6 +18,30 @@
             $this->path = $path;
         }
 
+        /**
+         * Set a new path
+         * @param   string      $path       New path
+        **/
+        public function setPath($path) {
+
+            $this->path = $path;
+
+        }
+
+
+        /**
+         * Get a Path clone with a new defined path
+         * @param   string      $path       New path
+        **/
+        public function withPath($path) {
+
+            $p = clone $this;
+            $p->setPath($path);
+
+            return $p;
+
+        }
+
 
         /**
          * Retrieve path basename

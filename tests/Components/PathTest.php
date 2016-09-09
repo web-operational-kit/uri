@@ -15,12 +15,13 @@
 
 
         public function __construct() {
-            $this->uri = Uri::createFromString(self::URI_COMPLETE);
+            $uri = Uri::createFromString(self::URI_COMPLETE);
+            $this->path = $uri->path;
         }
 
         public function testPath() {
 
-            $this->assertInstanceOf(Path::class, $this->uri->path);
+            $this->assertInstanceOf(Path::class, $this->path);
 
         }
 
@@ -30,7 +31,7 @@
         public function testBasename() {
 
             $this->assertEquals(
-                $this->uri->path->getBasename(),
+                $this->path->getBasename(),
                 self::RESOURCE_NAME
             );
 
@@ -42,7 +43,7 @@
         public function testBasenameWithSuffix() {
 
             $this->assertEquals(
-                $this->uri->path->getBasename(self::RESOURCE_EXTENSION),
+                $this->path->getBasename(self::RESOURCE_EXTENSION),
                 self::RESOURCE_WITHOUT_EXT
             );
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <phpunit colors="true" bootstrap="./vendor/autoload.php">
-    <testsuite name="WOK URI handler tests">
+    <testsuite name="WOK Uri component tests">
         <directory>./tests</directory>
     </testsuite>
     <filter>

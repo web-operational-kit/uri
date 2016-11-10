@@ -211,7 +211,7 @@
 
         /**
          * Get the URI path
-         * @return  string      Return the port value
+         * @return  string      Return the path instance
         **/
         public function getPath() {
             return $this->path;
@@ -219,7 +219,7 @@
 
 
         /**
-         * Define the URI port
+         * Define the URI path
          * @param   string      $path     New path value
         **/
         public function setPath($path) {
@@ -241,6 +241,37 @@
 
 
         /**
+         * Get the URI query
+         * @return  string      Return the port value
+        **/
+        public function getQuery() {
+            return $this->query;
+        }
+
+
+        /**
+         * Define the URI query
+         * @param   string      $path     New path value
+        **/
+        public function setQuery($query) {
+            $this->query = ($query instanceof Query ? $query : new Query($query));
+        }
+
+        /**
+         * Get a new Uri object with the specified query
+         * @param   integer         New query value
+        **/
+        public function withQuery($query) {
+
+            $uri = clone $this;
+            $uri->setQuery($query);
+
+            return $uri;
+
+        }
+
+
+        /**
          * Get the URI fragment
          * @return  string      Return the fragment value
         **/
@@ -249,16 +280,16 @@
         }
 
         /**
-         * Define the URI port
-         * @param   integer         New port value
+         * Define the URI fragment
+         * @param   integer         New fragment value
         **/
         public function setFragment($fragment) {
             $this->fragment = $fragment;
         }
 
         /**
-         * Get a new Uri object with the specified host
-         * @param   integer         New port value
+         * Get a new Uri object with the specified fragment
+         * @param   integer         New fragment value
         **/
         public function withFragment($fragment) {
 

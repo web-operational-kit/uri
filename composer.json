@@ -3,6 +3,7 @@
     "type": "library",
     "description": "WOK URI handler",
     "homepage": "https://github.com/web-operational-kit/uri",
+    "minimum-stability": "stable",
     "license": "BSD",
     "authors": [
         {
@@ -14,9 +15,6 @@
         "psr-4": {
             "WOK\\Uri\\" : "./src/"
         }
-    },
-    "require": {
-        "wok/helpers": "^1.0.0"
-    },
-    "minimum-stability": "stable"
+    }
+
 }

@@ -14,12 +14,22 @@
         const RESOURCE_WITHOUT_EXT      = 'resource';
         const URI_COMPLETE              = 'http://domain.tld/path/to/my/resource.ext';
 
-
+        /**
+         * Instanciante path object
+         * ---
+        **/
         public function __construct() {
             $uri = Uri::createFromString(self::URI_COMPLETE);
             $this->path = $uri->path;
         }
 
+        /**
+         * Is the path management working well ?
+         * ---
+         * - Path::getPath() : retrieve the path
+         * - Path::setPath() : set a new path
+         * - Path::withPath() : set a new path, copying object
+        **/
         public function testPath() {
 
             $this->assertEquals(self::PATH_COMPLETE, (string) $this->path);
@@ -37,6 +47,7 @@
 
         /**
          * Test basename method
+         * ---
         **/
         public function testBasename() {
 
@@ -49,6 +60,7 @@
 
         /**
          * Test basename method removing suffix
+         * ---
         **/
         public function testBasenameWithSuffix() {
 
@@ -56,6 +68,16 @@
                 $this->path->getBasename(self::RESOURCE_EXTENSION),
                 self::RESOURCE_WITHOUT_EXT
             );
+
+        }
+
+        /**
+         * Test __toString method
+         * ---
+        **/
+        public function testToString() {
+
+            $this->assertEquals(self::PATH_COMPLETE, (string) $this->path);
 
         }
 

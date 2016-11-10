@@ -11,14 +11,22 @@
         const URI_USERNAME_ALT         = 'username';
         const URI_PASSWORD             = 'pass';
         const URI_PASSWORD_ALT         = 'password';
+        const URI_FULL_USER            = 'user:pass';
         const URI_COMPLETE             = 'http://user:pass@domain.tld/';
 
-
+        /**
+         * Instanciate User object
+         * ---
+        **/
         public function __construct() {
             $uri = Uri::createFromString(self::URI_COMPLETE);
             $this->user = $uri->user;
         }
 
+        /**
+         * Is the User object well returned ?
+         * ---
+        **/
         public function testUser() {
 
             $this->assertInstanceOf(User::class, $this->user);
@@ -26,7 +34,9 @@
         }
 
         /**
-         * Test username
+         * Test about the username
+         * ---
+         * Try both Retrieving and setting username value
         **/
         public function testUsername() {
 
@@ -47,7 +57,9 @@
 
 
         /**
-         * Test username
+         * Test about the password
+         * ---
+         * Try both Retrieving and setting password value
         **/
         public function testPassword() {
 
@@ -63,6 +75,17 @@
 
             $user->setPassword(self::URI_PASSWORD_ALT);
             $this->assertEquals(self::URI_PASSWORD_ALT, $user->getPassword());
+
+        }
+
+
+        /**
+         * Test __toString method
+         * ---
+        **/
+        public function testToString() {
+
+            $this->assertEquals(self::URI_FULL_USER, (string) $this->user);
 
         }
 

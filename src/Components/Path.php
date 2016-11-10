@@ -18,6 +18,17 @@
             $this->path = $path;
         }
 
+
+        /**
+         * Get the path
+        **/
+        public function getPath($path) {
+
+            return $this->path;
+
+        }
+
+
         /**
          * Set a new path
          * @param   string      $path       New path

@@ -4,7 +4,7 @@
     "description": "WOK URI handler",
     "homepage": "https://github.com/web-operational-kit/uri",
     "minimum-stability": "stable",
-    "license": "BSD",
+    "license": "MIT",
     "authors": [
         {
             "name": "Sébastien ALEXANDRE",

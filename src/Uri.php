@@ -16,12 +16,14 @@
     use \WOK\Uri\Components\Path;
     use \WOK\Uri\Components\Query;
 
+    use \Psr\Http\Message\UriInterface;
+
 
     /**
      * The Uri class provide an interface
      * for the request URI
     **/
-    class Uri {
+    class Uri implements UriInterface {
 
         /**
          * @var string      $scheme         Uri scheme
@@ -125,6 +127,7 @@
             return $this->scheme;
         }
 
+
         /**
          * Define the URI scheme
          * @param   string      $scheme     New scheme value
@@ -132,6 +135,7 @@
         public function setScheme($scheme) {
             $this->scheme = $scheme;
         }
+
 
         /**
          * Get a new Uri object with the specified scheme
@@ -156,6 +160,7 @@
             return $this->host;
         }
 
+
         /**
          * Define the URI host
          * @param   mixed      $host     New host object or value
@@ -163,6 +168,7 @@
         public function setHost($host) {
             $this->host = ($host instanceof Host) ? $host : new Host($host);
         }
+
 
         /**
          * Get a new Uri object with the specified host
@@ -187,6 +193,7 @@
             return $this->port;
         }
 
+
         /**
          * Define the URI port
          * @param   integer         New port value
@@ -194,6 +201,7 @@
         public function setPort($port) {
             $this->port = $port;
         }
+
 
         /**
          * Get a new Uri object with the specified host
@@ -226,6 +234,7 @@
             $this->path = ($path instanceof Path ? $path : new Path($path));
         }
 
+
         /**
          * Get a new Uri object with the specified path
          * @param   integer         New path value
@@ -257,6 +266,7 @@
             $this->query = ($query instanceof Query ? $query : new Query($query));
         }
 
+
         /**
          * Get a new Uri object with the specified query
          * @param   integer         New query value
@@ -279,6 +289,7 @@
             return $this->fragment;
         }
 
+
         /**
          * Define the URI fragment
          * @param   integer         New fragment value
@@ -286,6 +297,7 @@
         public function setFragment($fragment) {
             $this->fragment = $fragment;
         }
+
 
         /**
          * Get a new Uri object with the specified fragment
@@ -319,7 +331,7 @@
 
         /**
          * Get the string formatted URI
-         * @param   string      Full URI string as scheme://[user-info@]host[:port]/path
+         * @param   string      Full URI string as scheme://[user:pass@]host[:port]/path[?query]
         **/
         public function __toString() {
 

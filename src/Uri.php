@@ -319,7 +319,7 @@
 
         /**
          * Get the string formatted URI
-         * @param   string      Full URI string as scheme://[user-info@]host[:port]/path
+         * @param   string      Full URI string as scheme://[user:pass@]host[:port]/path[?query]
         **/
         public function __toString() {
 
@@ -329,23 +329,30 @@
                 $uri = $this->scheme.':'.$uri;
             }
 
-            if(!empty($user = (string) $this->user)) {
+            $user = (string) $this->user;
+            if(!empty($user)) {
                 $uri .= $user.'@';
             }
 
-            $uri .= (string) $this->host;
+            $host = (string) $this->host;
+            if(!empty($host)) {
+                $uri .= $host;
+            }
 
             if(!empty($this->port)) {
                 $uri .= ':'.$this->port;
             }
 
-            $uri .= (!empty($path = (string) $this->path) ? $path : '/');
+            $path = (string) $this->path;
+            $uri .= (!empty($path) ? $path : '/');
 
-            if(!empty($query = (string) $this->query)) {
+            $query = (string) $this->query;
+            if(!empty($query)) {
                 $uri .= '?'.$query;
             }
 
-            if(!empty($fragment = (string) $this->fragment)) {
+            $fragment = (string) $this->fragment;
+            if(!empty($fragment)) {
                 $uri .= '#'.$fragment;
             }
 

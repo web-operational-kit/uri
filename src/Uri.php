@@ -323,10 +323,10 @@
         **/
         public function __toString() {
 
-            $uri = '//';
+            $uri = '';
 
             if(!empty($this->scheme)) {
-                $uri = $this->scheme.':'.$uri;
+                $uri = $this->scheme.'://'.$uri;
             }
 
             $user = (string) $this->user;

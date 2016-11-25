@@ -130,15 +130,17 @@
         **/
         public function __toString() {
 
-            $string = $this->username;
+            $string = (string) $this->username;
 
-            if(!empty($this->password)) {
+            if(!empty($this->password) && !empty($string)) {
+
                 $string .= ':'.$this->password;
             }
 
             return $string;
 
         }
+
 
 
     }

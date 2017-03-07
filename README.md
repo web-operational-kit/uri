@@ -2,6 +2,8 @@
 
 This library is a URI manager interface.
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/60ebce7d-b5b5-40b0-a59d-f7fe532a5f9d/big.png)](https://insight.sensiolabs.com/projects/60ebce7d-b5b5-40b0-a59d-f7fe532a5f9d)
+
 **Diclaimer :** This component is part of the [WOK](https://github.com/web-operational-kit/) (Web Operational Kit) framework. It however can be used as a standalone library.
 
 
